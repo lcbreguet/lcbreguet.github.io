@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mémoire M2 IA &amp; Gouvernance — Lucas Bréguet</title>
+<meta name="description" content="Suivi de mon mémoire de Master 2 sur la gouvernance de l'adoption de l'IA générative dans les cabinets de conseil et ESN.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%233d5a4a'/%3E%3Ctext x='50' y='66' font-size='54' font-family='Georgia,serif' fill='%23faf9f6' text-anchor='middle'%3ELB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf9f6; --surface:#ffffff; --border:#e3dfd6; --fg:#2a2a26; --fg-dim:#6b6a62;
+    --accent:#3d5a4a; --accent-soft:#e7ede9; --bar:#8a9a8f;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:'Inter',system-ui,sans-serif; font-size:16px; line-height:1.6;
+  }
+  .wrap{max-width:720px; margin:0 auto; padding:48px 20px 90px}
+  header{margin-bottom:36px}
+  .kicker{font-size:12.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); font-weight:600}
+  h1{font-family:'Source Serif 4',Georgia,serif; font-size:30px; font-weight:600; margin:8px 0 6px; line-height:1.25}
+  .byline{color:var(--fg-dim); font-size:14.5px}
+  .byline a{color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-soft)}
+  nav{display:flex; gap:18px; margin:26px 0 0; font-size:13.5px; border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:12px 0}
+  nav a{color:var(--fg-dim); text-decoration:none}
+  nav a:hover{color:var(--accent)}
+  section{margin:42px 0}
+  h2{font-family:'Source Serif 4',Georgia,serif; font-size:21px; font-weight:600; margin:0 0 14px}
+  p{margin:0 0 14px; max-width:62ch}
+  .note{
+    background:var(--accent-soft); border-radius:8px; padding:12px 16px; font-size:13.5px;
+    color:var(--accent); margin:0 0 20px;
+  }
+  .meta-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:18px 0}
+  .meta-item{background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:12px 14px}
+  .meta-item .k{font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--fg-dim); display:block; margin-bottom:4px}
+  .meta-item .v{font-size:14px; font-weight:500}
+  .chart-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    padding:20px 22px; margin:18px 0;
+  }
+  .chart-card h3{font-size:14.5px; font-weight:600; margin:0 0 4px}
+  .chart-card .sub{font-size:12.5px; color:var(--fg-dim); margin:0 0 16px}
+  .bars{display:flex; flex-direction:column; gap:10px}
+  .bar-row{display:grid; grid-template-columns:150px 1fr 48px; align-items:center; gap:10px; font-size:13px}
+  .bar-track{background:var(--accent-soft); border-radius:5px; height:16px; overflow:hidden}
+  .bar-fill{background:var(--bar); height:100%; border-radius:5px}
+  .bar-fill.accent{background:var(--accent)}
+  .donut-row{display:flex; align-items:center; gap:28px; flex-wrap:wrap}
+  .legend{font-size:13px; display:flex; flex-direction:column; gap:8px}
+  .legend .dot{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:8px}
+  .caveat{font-size:12px; color:var(--fg-dim); margin-top:14px; font-style:italic}
+  ul.refs{list-style:none; padding:0; margin:0}
+  ul.refs li{margin-bottom:10px; font-size:14px}
+  ul.refs a{color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-soft)}
+  ul.refs .d{color:var(--fg-dim); font-size:12.5px; display:block; margin-top:2px}
+  .contact-box{
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    padding:20px 22px;
+  }
+  footer{margin-top:60px; padding-top:18px; border-top:1px solid var(--border); font-size:12.5px; color:var(--fg-dim)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Mémoire de recherche — Master 2</div>
+    <h1>La gouvernance de l'adoption de l'IA générative<br>dans les cabinets de conseil et ESN</h1>
+    <p class="byline">Lucas Bréguet — Master 2 Intelligence Artificielle et Gouvernance, Université Paris 1 Panthéon-Sorbonne · <a href="mailto:lucas.breguet@outlook.com">lucas.breguet@outlook.com</a></p>
+    <nav>
+      <a href="#contexte">Contexte</a>
+      <a href="#methodologie">Méthodologie</a>
+      <a href="#resultats">Premiers résultats</a>
+      <a href="#ressources">Ressources</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="contexte">
+    <h2>Contexte</h2>
+    <p>Ce mémoire s'inscrit dans le parcours « Intelligence Artificielle et Gouvernance » du Master Droit du numérique de l'Université Paris 1 Panthéon-Sorbonne. Il porte sur la manière dont les cabinets de conseil et les ESN structurent la gouvernance de leurs usages de l'IA générative : qui décide, qui encadre, et comment ces pratiques se diffusent entre sièges et filiales.</p>
+    <p>L'objectif n'est pas d'évaluer des outils ou des architectures techniques, mais de comprendre les choix d'organisation : répartition des responsabilités, degré de centralisation, et place de la gouvernance IA dans la feuille de route de ces structures.</p>
+    <div class="meta-grid">
+      <div class="meta-item"><span class="k">Encadrant</span><span class="v">Pr. A. Delmotte</span></div>
+      <div class="meta-item"><span class="k">Échantillon visé</span><span class="v">30–40 entretiens, secteur conseil/ESN</span></div>
+      <div class="meta-item"><span class="k">Statut</span><span class="v">Phase d'entretiens — en cours</span></div>
+      <div class="meta-item"><span class="k">Soutenance prévue</span><span class="v">Septembre 2027</span></div>
+    </div>
+  </section>
+
+  <section id="methodologie">
+    <h2>Méthodologie</h2>
+    <p>Entretiens semi-structurés d'une quinzaine de minutes auprès de dirigeants, DSI et responsables de practice. Chaque échange porte sur l'organisation de la fonction, le degré de centralisation des outils, et les priorités de gouvernance — jamais sur le détail technique des systèmes utilisés.</p>
+    <p class="note">Les données issues des entretiens sont anonymisées et agrégées par secteur. Aucune réponse individuelle n'est publiée ou attribuée nominativement.</p>
+  </section>
+
+  <section id="resultats">
+    <h2>Premiers résultats (provisoires)</h2>
+    <p>Synthèse partielle sur les 12 premiers entretiens conduits à ce stade. Échantillon encore restreint — les tendances ci-dessous seront affinées au fil de la collecte.</p>
+
+    <div class="chart-card">
+      <h3>Niveau de gouvernance IA perçu par les répondants</h3>
+      <div class="sub">Auto-évaluation déclarée en entretien, n=12</div>
+      <div class="bars">
+        <div class="bar-row"><span>Gouvernance formalisée</span><div class="bar-track"><div class="bar-fill accent" style="width:33%"></div></div><span>4/12</span></div>
+        <div class="bar-row"><span>En cours de structuration</span><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div><span>6/12</span></div>
+        <div class="bar-row"><span>Peu ou pas formalisée</span><div class="bar-track"><div class="bar-fill" style="width:17%"></div></div><span>2/12</span></div>
+      </div>
+      <p class="caveat">Échantillon non représentatif à ce stade — à confirmer sur la suite de la collecte.</p>
+    </div>
+
+    <div class="chart-card">
+      <h3>Modèle d'organisation cité</h3>
+      <div class="sub">Réponse dominante par entretien, n=12</div>
+      <div class="donut-row">
+        <svg width="140" height="140" viewBox="0 0 42 42" role="img" aria-label="Répartition des modèles d'organisation">
+          <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#e3dfd6" stroke-width="6"></circle>
+          <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#3d5a4a" stroke-width="6"
+                  stroke-dasharray="42 58" stroke-dashoffset="25"></circle>
+          <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#8a9a8f" stroke-width="6"
+                  stroke-dasharray="33 67" stroke-dashoffset="-17"></circle>
+          <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#c9c2b2" stroke-width="6"
+                  stroke-dasharray="25 75" stroke-dashoffset="-50"></circle>
+        </svg>
+        <div class="legend">
+          <div><span class="dot" style="background:#3d5a4a"></span>Centralisée groupe — 42%</div>
+          <div><span class="dot" style="background:#8a9a8f"></span>Hybride (central + local) — 33%</div>
+          <div><span class="dot" style="background:#c9c2b2"></span>Décentralisée par entité — 25%</div>
+        </div>
+      </div>
+      <p class="caveat">Catégorisation qualitative établie à partir des verbatims, sujette à révision.</p>
+    </div>
+  </section>
+
+  <section id="ressources">
+    <h2>Ressources &amp; programme</h2>
+    <ul class="refs">
+      <li><a href="https://formations.pantheonsorbonne.fr/fr/catalogue-des-formations/master-M/master-droit-du-numerique-KBUHXVW8/master-parcours-intelligence-artificielle-et-gouvernance-M5UADSSM.html" target="_blank" rel="noopener">Master 2 Intelligence Artificielle et Gouvernance — fiche officielle</a><span class="d">Université Paris 1 Panthéon-Sorbonne, catalogue des formations</span></li>
+      <li><a href="https://formations.pantheonsorbonne.fr/odf/_plugin-attachment/subprogram-master-parcours-intelligence-artificielle-et-gouvernance-fr/FAQ%20M2%20IA%20ET%20GOUVERNANCE.pdf" target="_blank" rel="noopener">FAQ du Master 2 IA et Gouvernance (PDF)</a><span class="d">Document officiel du programme</span></li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-box">
+      <p>Vous travaillez dans un cabinet de conseil ou une ESN et votre profil vous semble pertinent pour ce mémoire ? Un échange de 15 à 20 minutes, par téléphone ou par écrit selon ce qui vous arrange, suffit amplement.</p>
+      <p style="margin-bottom:0"><a href="mailto:lucas.breguet@outlook.com">lucas.breguet@outlook.com</a></p>
+    </div>
+  </section>
+
+  <footer>Page personnelle de suivi de mémoire — Lucas Bréguet, Master 2 IA et Gouvernance, Paris 1 Panthéon-Sorbonne. Dernière mise à jour : novembre 2026. Hébergé sur GitHub Pages.</footer>
+
+</div>
+</body>
+</html>
