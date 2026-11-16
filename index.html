@@ -25,7 +25,10 @@
   header{margin-bottom:48px; padding-bottom:32px; border-bottom:2px solid var(--border-light)}
   .kicker{font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); font-weight:700}
   h1{font-family:'Source Serif 4',Georgia,serif; font-size:36px; font-weight:700; margin:12px 0 10px; line-height:1.2}
-  .byline{color:var(--fg-dim); font-size:15px; margin-top:4px}
+  .byline{margin-top:10px; display:flex; flex-direction:column; gap:4px}
+  .byline-name{font-size:16px; font-weight:700; color:var(--fg)}
+  .byline-role{font-size:14px; color:var(--fg-dim)}
+  .byline-email{font-size:14px; margin-top:2px}
   .byline a{color:var(--accent); text-decoration:none; border-bottom:1.5px solid var(--accent-light); transition:all .2s}
   .byline a:hover{border-bottom-color:var(--accent)}
   nav{display:flex; gap:22px; margin:24px 0 0; font-size:14px; padding:0}
@@ -102,8 +105,12 @@
 
   <header>
     <div class="kicker">Mémoire de recherche — Master 2</div>
-    <h1>La gouvernance de l'adoption de l'IA générative<br>dans les cabinets de conseil et ESN</h1>
-    <p class="byline">Lucas Bréguet — Master 2 Intelligence Artificielle et Gouvernance, Université Paris 1 Panthéon-Sorbonne · <a href="mailto:lucas.breguet@outlook.com">lucas.breguet@outlook.com</a></p>
+    <h1>La gouvernance de l'adoption de l'IA générative<br>dans les cabinets de conseil et les ESN</h1>
+    <p class="byline">
+      <span class="byline-name">Lucas Bréguet</span>
+      <span class="byline-role">Master 2 Intelligence Artificielle et Gouvernance · Université Paris 1 Panthéon-Sorbonne</span>
+      <span class="byline-email"><a href="mailto:lucas.breguet@outlook.com">lucas.breguet@outlook.com</a></span>
+    </p>
     <nav>
       <a href="#contexte">Contexte</a>
       <a href="#objectifs">Objectifs de recherche</a>
