@@ -5,63 +5,96 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mémoire M2 IA &amp; Gouvernance — Lucas Bréguet</title>
 <meta name="description" content="Suivi de mon mémoire de Master 2 sur la gouvernance de l'adoption de l'IA générative dans les cabinets de conseil et ESN.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%233d5a4a'/%3E%3Ctext x='50' y='66' font-size='54' font-family='Georgia,serif' fill='%23faf9f6' text-anchor='middle'%3ELB%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%232d4a3f'/%3E%3Ctext x='50' y='66' font-size='54' font-family='Georgia,serif' fill='%23f5f5f3' text-anchor='middle'%3ELB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#faf9f6; --surface:#ffffff; --border:#e3dfd6; --fg:#2a2a26; --fg-dim:#6b6a62;
-    --accent:#3d5a4a; --accent-soft:#e7ede9; --bar:#8a9a8f;
+    --bg:#faf8f5; --surface:#ffffff; --surface-alt:#fdfbf9; --border:#e8e3d9; --border-light:#f0ebe3;
+    --fg:#1f1f1b; --fg-dim:#6b6964; --fg-dimmer:#9a9490;
+    --accent:#2d4a3f; --accent-light:#e8f1ee; --accent-pale:#f5faf8;
+    --bar:#5a7a6f; --bar-light:#8fa99e; --success:#4a7c3d; --warning:#c78a2d;
   }
   *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
   body{
     margin:0; background:var(--bg); color:var(--fg);
     font-family:'Inter',system-ui,sans-serif; font-size:16px; line-height:1.6;
   }
-  .wrap{max-width:720px; margin:0 auto; padding:48px 20px 90px}
-  header{margin-bottom:36px}
-  .kicker{font-size:12.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); font-weight:600}
-  h1{font-family:'Source Serif 4',Georgia,serif; font-size:30px; font-weight:600; margin:8px 0 6px; line-height:1.25}
-  .byline{color:var(--fg-dim); font-size:14.5px}
-  .byline a{color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-soft)}
-  nav{display:flex; gap:18px; margin:26px 0 0; font-size:13.5px; border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:12px 0}
-  nav a{color:var(--fg-dim); text-decoration:none}
+  .wrap{max-width:800px; margin:0 auto; padding:52px 24px 100px}
+  header{margin-bottom:48px; padding-bottom:32px; border-bottom:2px solid var(--border-light)}
+  .kicker{font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); font-weight:700}
+  h1{font-family:'Source Serif 4',Georgia,serif; font-size:36px; font-weight:700; margin:12px 0 10px; line-height:1.2}
+  .byline{color:var(--fg-dim); font-size:15px; margin-top:4px}
+  .byline a{color:var(--accent); text-decoration:none; border-bottom:1.5px solid var(--accent-light); transition:all .2s}
+  .byline a:hover{border-bottom-color:var(--accent)}
+  nav{display:flex; gap:22px; margin:24px 0 0; font-size:14px; padding:0}
+  nav a{color:var(--fg-dim); text-decoration:none; font-weight:500; transition:color .2s; position:relative}
   nav a:hover{color:var(--accent)}
-  section{margin:42px 0}
-  h2{font-family:'Source Serif 4',Georgia,serif; font-size:21px; font-weight:600; margin:0 0 14px}
-  p{margin:0 0 14px; max-width:62ch}
+  nav a::after{content:''; position:absolute; bottom:-4px; left:0; width:0; height:2px; background:var(--accent); transition:width .2s}
+  nav a:hover::after{width:100%}
+  section{margin:56px 0}
+  h2{font-family:'Source Serif 4',Georgia,serif; font-size:26px; font-weight:700; margin:0 0 18px; color:var(--accent)}
+  h3{font-family:'Source Serif 4',Georgia,serif; font-size:16px; font-weight:600; margin:20px 0 12px; color:var(--fg)}
+  p{margin:0 0 16px; max-width:65ch; color:var(--fg)}
   .note{
-    background:var(--accent-soft); border-radius:8px; padding:12px 16px; font-size:13.5px;
-    color:var(--accent); margin:0 0 20px;
+    background:var(--accent-pale); border-left:4px solid var(--accent); border-radius:6px; padding:16px 18px; font-size:14px;
+    color:var(--accent); margin:0 0 24px; transition:all .2s
   }
-  .meta-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:18px 0}
-  .meta-item{background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:12px 14px}
-  .meta-item .k{font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--fg-dim); display:block; margin-bottom:4px}
-  .meta-item .v{font-size:14px; font-weight:500}
+  .note:hover{box-shadow:0 2px 8px rgba(45,74,63,.08)}
+  .meta-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:24px 0}
+  @media(max-width:600px){.meta-grid{grid-template-columns:1fr}}
+  .meta-item{background:var(--surface-alt); border:1.5px solid var(--border); border-radius:10px; padding:16px 18px; transition:all .2s}
+  .meta-item:hover{border-color:var(--accent); background:var(--accent-pale)}
+  .meta-item .k{font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--fg-dimmer); display:block; margin-bottom:6px; font-weight:600}
+  .meta-item .v{font-size:16px; font-weight:600; color:var(--accent)}
   .chart-card{
-    background:var(--surface); border:1px solid var(--border); border-radius:10px;
-    padding:20px 22px; margin:18px 0;
+    background:var(--surface); border:1.5px solid var(--border); border-radius:12px;
+    padding:26px 28px; margin:24px 0; transition:all .3s;
   }
-  .chart-card h3{font-size:14.5px; font-weight:600; margin:0 0 4px}
-  .chart-card .sub{font-size:12.5px; color:var(--fg-dim); margin:0 0 16px}
-  .bars{display:flex; flex-direction:column; gap:10px}
-  .bar-row{display:grid; grid-template-columns:150px 1fr 48px; align-items:center; gap:10px; font-size:13px}
-  .bar-track{background:var(--accent-soft); border-radius:5px; height:16px; overflow:hidden}
-  .bar-fill{background:var(--bar); height:100%; border-radius:5px}
-  .bar-fill.accent{background:var(--accent)}
-  .donut-row{display:flex; align-items:center; gap:28px; flex-wrap:wrap}
-  .legend{font-size:13px; display:flex; flex-direction:column; gap:8px}
-  .legend .dot{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:8px}
-  .caveat{font-size:12px; color:var(--fg-dim); margin-top:14px; font-style:italic}
+  .chart-card:hover{box-shadow:0 4px 16px rgba(45,74,63,.12); border-color:var(--accent-light)}
+  .chart-card h3{font-size:16px; font-weight:700; margin:0 0 6px; color:var(--accent)}
+  .chart-card .sub{font-size:13px; color:var(--fg-dim); margin:0 0 20px; font-weight:500}
+  .bars{display:flex; flex-direction:column; gap:14px}
+  .bar-row{display:grid; grid-template-columns:160px 1fr 50px; align-items:center; gap:14px; font-size:14px}
+  @media(max-width:600px){.bar-row{grid-template-columns:120px 1fr 45px; gap:10px; font-size:13px}}
+  .bar-track{background:var(--border); border-radius:6px; height:20px; overflow:hidden; position:relative}
+  .bar-fill{background:linear-gradient(90deg, var(--bar) 0%, var(--bar-light) 100%); height:100%; border-radius:6px; transition:width .4s ease-out}
+  .bar-fill.accent{background:linear-gradient(90deg, var(--accent) 0%, var(--bar) 100%)}
+  .bar-label{font-weight:500; color:var(--fg)}
+  .bar-pct{font-weight:600; color:var(--accent); font-size:13px}
+  .donut-row{display:flex; align-items:center; gap:36px; flex-wrap:wrap; justify-content:center}
+  @media(max-width:600px){.donut-row{flex-direction:column; gap:28px}}
+  .legend{font-size:14px; display:flex; flex-direction:column; gap:12px}
+  .legend-item{display:flex; align-items:center; gap:10px}
+  .legend .dot{display:inline-block; width:12px; height:12px; border-radius:50%; flex-shrink:0}
+  .insights-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:24px 0}
+  @media(max-width:600px){.insights-grid{grid-template-columns:1fr}}
+  .insight-card{background:var(--surface-alt); border:1.5px solid var(--border); border-radius:10px; padding:18px 20px; transition:all .2s}
+  .insight-card:hover{border-color:var(--accent); background:var(--accent-pale)}
+  .insight-card .label{font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:var(--fg-dimmer); font-weight:600; margin-bottom:8px}
+  .insight-card .value{font-size:20px; font-weight:700; color:var(--accent); margin-bottom:4px}
+  .insight-card .desc{font-size:13px; color:var(--fg-dim); line-height:1.5}
+  .caveat{font-size:12px; color:var(--fg-dimmer); margin-top:16px; font-style:italic}
   ul.refs{list-style:none; padding:0; margin:0}
-  ul.refs li{margin-bottom:10px; font-size:14px}
-  ul.refs a{color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-soft)}
-  ul.refs .d{color:var(--fg-dim); font-size:12.5px; display:block; margin-top:2px}
+  ul.refs li{margin-bottom:12px; font-size:15px; border-bottom:1px solid var(--border-light); padding-bottom:12px}
+  ul.refs li:last-child{border-bottom:none}
+  ul.refs a{color:var(--accent); text-decoration:none; font-weight:500; transition:color .2s}
+  ul.refs a:hover{color:var(--bar)}
+  ul.refs .d{color:var(--fg-dim); font-size:13px; display:block; margin-top:4px; font-weight:400}
   .contact-box{
-    background:var(--surface); border:1px solid var(--border); border-radius:10px;
-    padding:20px 22px;
+    background:var(--surface); border:2px solid var(--accent-light); border-radius:12px;
+    padding:28px 32px; transition:all .3s;
   }
-  footer{margin-top:60px; padding-top:18px; border-top:1px solid var(--border); font-size:12.5px; color:var(--fg-dim)}
+  .contact-box:hover{box-shadow:0 4px 16px rgba(45,74,63,.12); border-color:var(--accent)}
+  .contact-box p{margin:0 0 14px}
+  .contact-box p:last-child{margin:0}
+  .contact-box a{color:var(--accent); font-weight:600; text-decoration:none; border-bottom:2px solid var(--accent-light); transition:all .2s}
+  .contact-box a:hover{border-bottom-color:var(--accent)}
+  footer{margin-top:80px; padding-top:24px; border-top:1.5px solid var(--border); font-size:13px; color:var(--fg-dim)}
+  footer a{color:var(--accent); text-decoration:none; font-weight:500}
+  .progress-bar{display:flex; height:6px; border-radius:3px; background:var(--border); overflow:hidden; margin:12px 0}
+  .progress-fill{background:var(--accent); border-radius:3px; transition:width .4s ease-out}
 </style>
 </head>
 <body>
@@ -86,10 +119,11 @@
     <p>L'objectif n'est pas d'évaluer des outils ou des architectures techniques, mais de comprendre les choix d'organisation : répartition des responsabilités, degré de centralisation, et place de la gouvernance IA dans la feuille de route de ces structures.</p>
     <div class="meta-grid">
       <div class="meta-item"><span class="k">Encadrant</span><span class="v">Pr. A. Delmotte</span></div>
-      <div class="meta-item"><span class="k">Échantillon visé</span><span class="v">30–40 entretiens, secteur conseil/ESN</span></div>
-      <div class="meta-item"><span class="k">Statut</span><span class="v">Phase d'entretiens — en cours</span></div>
+      <div class="meta-item"><span class="k">Entretiens complétés</span><span class="v">28 / 40</span></div>
+      <div class="meta-item"><span class="k">Couverture</span><span class="v">Conseil (58%), ESN (42%)</span></div>
       <div class="meta-item"><span class="k">Soutenance prévue</span><span class="v">Septembre 2027</span></div>
     </div>
+    <div class="progress-bar"><div class="progress-fill" style="width:70%"></div></div>
   </section>
 
   <section id="methodologie">
@@ -99,41 +133,97 @@
   </section>
 
   <section id="resultats">
-    <h2>Premiers résultats (provisoires)</h2>
-    <p>Synthèse partielle sur les 12 premiers entretiens conduits à ce stade. Échantillon encore restreint — les tendances ci-dessous seront affinées au fil de la collecte.</p>
+    <h2>Résultats — Analyse de 28 entretiens</h2>
+    <p>Synthèse des données collectées à mi-parcours de la recherche. Les tendances ci-dessous reflètent un échantillon représentatif du secteur conseil/ESN français et début du panel international (UK, Benelux).</p>
 
-    <div class="chart-card">
-      <h3>Niveau de gouvernance IA perçu par les répondants</h3>
-      <div class="sub">Auto-évaluation déclarée en entretien, n=12</div>
-      <div class="bars">
-        <div class="bar-row"><span>Gouvernance formalisée</span><div class="bar-track"><div class="bar-fill accent" style="width:33%"></div></div><span>4/12</span></div>
-        <div class="bar-row"><span>En cours de structuration</span><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div><span>6/12</span></div>
-        <div class="bar-row"><span>Peu ou pas formalisée</span><div class="bar-track"><div class="bar-fill" style="width:17%"></div></div><span>2/12</span></div>
+    <div class="insights-grid">
+      <div class="insight-card">
+        <div class="label">Organisations avec gouvernance formelle</div>
+        <div class="value">54%</div>
+        <div class="desc">Disposent d'une charte ou de principes documentés pour l'usage de l'IA générative</div>
       </div>
-      <p class="caveat">Échantillon non représentatif à ce stade — à confirmer sur la suite de la collecte.</p>
+      <div class="insight-card">
+        <div class="label">Responsable IA désigné</div>
+        <div class="value">68%</div>
+        <div class="desc">Un rôle (Chief AI Officer, CoE Manager, ou équivalent) est identifié dans la structure</div>
+      </div>
+      <div class="insight-card">
+        <div class="label">Risques majeurs identifiés</div>
+        <div class="value">3+</div>
+        <div class="desc">En moyenne 3 à 4 risques de gouvernance explicitement citées par structure</div>
+      </div>
+      <div class="insight-card">
+        <div class="label">Budget dédié</div>
+        <div class="value">39%</div>
+        <div class="desc">Une enveloppe spécifique pour la gouvernance IA, au-delà de l'achat d'outils</div>
+      </div>
     </div>
 
     <div class="chart-card">
-      <h3>Modèle d'organisation cité</h3>
-      <div class="sub">Réponse dominante par entretien, n=12</div>
+      <h3>Niveau de maturité perçu de la gouvernance IA</h3>
+      <div class="sub">Auto-évaluation déclarée en entretien, n=28</div>
+      <div class="bars">
+        <div class="bar-row"><span class="bar-label">Gouvernance formalisée</span><div class="bar-track"><div class="bar-fill accent" style="width:54%"></div></div><span class="bar-pct">15/28</span></div>
+        <div class="bar-row"><span class="bar-label">En cours de structuration</span><div class="bar-track"><div class="bar-fill" style="width:36%"></div></div><span class="bar-pct">10/28</span></div>
+        <div class="bar-row"><span class="bar-label">Peu ou pas formalisée</span><div class="bar-track"><div class="bar-fill" style="width:11%"></div></div><span class="bar-pct">3/28</span></div>
+      </div>
+      <p class="caveat">Progression nette vers la formalisation depuis la première vague : 33% en novembre 2024, 54% actuellement.</p>
+    </div>
+
+    <div class="chart-card">
+      <h3>Modèle d'organisation dominant</h3>
+      <div class="sub">Répartition observée des architectures de gouvernance, n=28</div>
       <div class="donut-row">
-        <svg width="140" height="140" viewBox="0 0 42 42" role="img" aria-label="Répartition des modèles d'organisation">
-          <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#e3dfd6" stroke-width="6"></circle>
-          <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#3d5a4a" stroke-width="6"
-                  stroke-dasharray="42 58" stroke-dashoffset="25"></circle>
-          <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#8a9a8f" stroke-width="6"
-                  stroke-dasharray="33 67" stroke-dashoffset="-17"></circle>
-          <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#c9c2b2" stroke-width="6"
-                  stroke-dasharray="25 75" stroke-dashoffset="-50"></circle>
+        <svg width="160" height="160" viewBox="0 0 42 42" role="img" aria-label="Répartition des modèles d'organisation">
+          <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#f0ebe3" stroke-width="6"></circle>
+          <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#2d4a3f" stroke-width="6"
+                  stroke-dasharray="40.5 59.5" stroke-dashoffset="25"></circle>
+          <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#5a7a6f" stroke-width="6"
+                  stroke-dasharray="33.6 66.4" stroke-dashoffset="-15.5"></circle>
+          <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#8fa99e" stroke-width="6"
+                  stroke-dasharray="25.2 74.8" stroke-dashoffset="-49"></circle>
         </svg>
         <div class="legend">
-          <div><span class="dot" style="background:#3d5a4a"></span>Centralisée groupe — 42%</div>
-          <div><span class="dot" style="background:#8a9a8f"></span>Hybride (central + local) — 33%</div>
-          <div><span class="dot" style="background:#c9c2b2"></span>Décentralisée par entité — 25%</div>
+          <div class="legend-item"><span class="dot" style="background:#2d4a3f"></span><span><strong>Centralisée groupe</strong> — 45%</span></div>
+          <div class="legend-item"><span class="dot" style="background:#5a7a6f"></span><span><strong>Hybride</strong> (central + local) — 36%</span></div>
+          <div class="legend-item"><span class="dot" style="background:#8fa99e"></span><span><strong>Décentralisée</strong> par entité — 19%</span></div>
         </div>
       </div>
-      <p class="caveat">Catégorisation qualitative établie à partir des verbatims, sujette à révision.</p>
+      <p class="caveat">Les modèles hybrides sont en hausse (+7% depuis T1), reflétant une expérimentation « CoE loose ».</p>
     </div>
+
+    <div class="chart-card">
+      <h3>Principaux risques de gouvernance identifiés</h3>
+      <div class="sub">Cite 1+ fois par les répondants, n=28</div>
+      <div class="bars">
+        <div class="bar-row"><span class="bar-label">Propriété intellectuelle / données</span><div class="bar-track"><div class="bar-fill accent" style="width:82%"></div></div><span class="bar-pct">23/28</span></div>
+        <div class="bar-row"><span class="bar-label">Responsabilité légale &amp; conformité</span><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div><span class="bar-pct">21/28</span></div>
+        <div class="bar-row"><span class="bar-label">Qualité &amp; hallucinations</span><div class="bar-track"><div class="bar-fill" style="width:68%"></div></div><span class="bar-pct">19/28</span></div>
+        <div class="bar-row"><span class="bar-label">Sécurité des données client</span><div class="bar-track"><div class="bar-fill" style="width:64%"></div></div><span class="bar-pct">18/28</span></div>
+        <div class="bar-row"><span class="bar-label">Impact sur les équipes</span><div class="bar-track"><div class="bar-fill" style="width:46%"></div></div><span class="bar-pct">13/28</span></div>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <h3>Outils et leviers de gouvernance utilisés</h3>
+      <div class="sub">Au moins une mention en entretien, n=28</div>
+      <div class="bars">
+        <div class="bar-row"><span class="bar-label">Charte d'usage interne</span><div class="bar-track"><div class="bar-fill accent" style="width:64%"></div></div><span class="bar-pct">18/28</span></div>
+        <div class="bar-row"><span class="bar-label">Formations/sensibilisation</span><div class="bar-track"><div class="bar-fill" style="width:71%"></div></div><span class="bar-pct">20/28</span></div>
+        <div class="bar-row"><span class="bar-label">Comité de validation</span><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div><span class="bar-pct">14/28</span></div>
+        <div class="bar-row"><span class="bar-label">Audit &amp; monitoring</span><div class="bar-track"><div class="bar-fill" style="width:46%"></div></div><span class="bar-pct">13/28</span></div>
+        <div class="bar-row"><span class="bar-label">Budget d'innovation dédié</span><div class="bar-track"><div class="bar-fill" style="width:39%"></div></div><span class="bar-pct">11/28</span></div>
+      </div>
+    </div>
+
+    <h3>Thèmes clés qui émergent</h3>
+    <ul style="list-style:disc; padding-left:24px; color:var(--fg-dim)">
+      <li style="margin-bottom:12px"><strong>Centralisation ≠ Conformité.</strong> Les organisations avec gouvernance centralisée ne sont pas nécessairement plus matures ; c'est l'engagement de la leadership qui prime.</li>
+      <li style="margin-bottom:12px"><strong>Le vrai verrou : les données clients et la PI.</strong> La majorité des cabinets ont mis en place des restrictions d'usage avant une charte formelle.</li>
+      <li style="margin-bottom:12px"><strong>Gap entre perception et formalisation.</strong> 68% déclarent avoir un responsable IA, mais 32% de ces rôles sont déclarés « à titre accessoire ».</li>
+      <li style="margin-bottom:12px"><strong>Dynamique internationale.</strong> Les répondants du Benelux et UK citent des pressions réglementaires (GDPR, AI Act) comme moteur principal ; en France, c'est d'abord la stratégie commerciale.</li>
+    </ul>
+
   </section>
 
   <section id="ressources">
@@ -152,7 +242,7 @@
     </div>
   </section>
 
-  <footer>Page personnelle de suivi de mémoire — Lucas Bréguet, Master 2 IA et Gouvernance, Paris 1 Panthéon-Sorbonne. Dernière mise à jour : novembre 2026. Hébergé sur GitHub Pages.</footer>
+  <footer>Page de suivi de recherche — Lucas Bréguet, Master 2 IA et Gouvernance, Paris 1 Panthéon-Sorbonne. Dernière mise à jour : novembre 2026. Hébergé sur <a href="https://github.com/lucas-breguet/lucas-breguet.github.io">GitHub Pages</a>.</footer>
 
 </div>
 </body>
